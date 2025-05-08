@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Search</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Movie Search App</h1>
+
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-4">
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control"
+          placeholder="Search movies"
+        />
+      </div>
+      <div class="col-md-2">
+        <input
+          type="text"
+          id="year"
+          class="form-control"
+          placeholder="Enter year"
+        />
+      </div>
+      <div class="col-md-2">
+        <button onclick="searchMovies()" class="btn btn-primary w-100">Search</button>
+      </div>
+    </div>
+
+    <div id="results" class="row gy-4"></div>
+  </div>
+
+  <script>
+    async function searchMovies() {
+      const search = document.getElementById('searchInput').value.trim();
+      const year = document.querySelector('#year').value.trim();
+      const response = await fetch(
+        `http://www.omdbapi.com/?s=${search}&y=${year}&plot=full&apikey=3e5603d3`
+      );
+      const movies = await response.json();
+
+      const result = document.querySelector('#results');
+      result.innerHTML = '';
+
+      const { Search } = movies;
+
+      if (Search) {
+        Search.map((movi) => {
+          result.innerHTML += `
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <img src="${movi.Poster !== "N/A" ? movi.Poster : 'https://via.placeholder.com/300x445?text=No+Image'}" class="card-img-top" alt="${movi.Title}">
+                <div class="card-body">
+                  <h5 class="card-title">${movi.Title}</h5>
+                  <p class="card-text"><strong>Year:</strong> ${movi.Year}</p>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      } else {
+        result.innerHTML = `<div class="col-12 text-center"><p class="text-danger">No movies found. Try again!</p></div>`;
+      }
+    }
+  </script>
+</body>
+</html>

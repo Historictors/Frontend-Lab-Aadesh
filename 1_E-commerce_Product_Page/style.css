@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+/* Header Styles */
+.amazon-navbar {
+    background-color: #131921;
+    padding: 0.5rem 0;
+}
+
+.search-box {
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+}
+
+.search-btn {
+    background-color: #febd69;
+    border-radius: 0 4px 4px 0;
+    border: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: #f3f3f3;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+/* Product Gallery */
+.product-gallery {
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.thumbnail-img {
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.thumbnail-img:hover {
+    border-color: #e77600;
+}
+
+/* Product Info */
+.product-info {
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.product-rating {
+    color: #e77600;
+    font-size: 18px;
+}
+
+.price {
+    color: #b12704;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #565959;
+    font-size: 14px;
+}
+
+.savings {
+    color: #565959;
+    font-size: 14px;
+}
+
+.highlight {
+    color: #067d62;
+    font-weight: 600;
+}
+
+/* Delivery Options */
+.delivery-options {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.delivery-icon {
+    color: #067d62;
+    margin-right: 10px;
+}
+
+/* Add to Cart */
+.add-to-cart {
+    background-color: #ffd814;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #f7ca00;
+}
+
+.buy-now {
+    background-color: #ffa41c;
+    border: none; 
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.buy-now:hover {
+    background-color: #fa8900;
+}
+
+/* Product Details */
+.product-details {
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.details-title {
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: #232f3e;
+    color: white;
+    padding: 30px 0;
+    margin-top: 30px;
+}

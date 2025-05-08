@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        html,body{
+        height: 100%;
+        width: 100%;
+        background: #212121;
+        }
+        .board{
+            display: flex;
+            flex-direction: column;
+
+        }
+        .col{
+           height: 100px;
+           width: 100px;
+        }
+        .row{
+            display: flex;
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" placeholder="enter board size" class="size">
+    <button class="btn">Create</button>
+    
+    <div class="board">
+       
+    </div>
+
+    <script>
+
+    
+            const btn = document.querySelector('.btn')
+            const sizeInput = document.querySelector('.size')
+            const board = document.querySelector('.board')
+
+            const colCreate = (i,j) => {
+                const col = document.createElement('div')
+                            col.style.backgroundColor = (i +j ) % 2 ? "black" : "white"
+                            col.textContent =  (i +j ) % 2 ? "#" : "*"
+                            col.setAttribute('class','col')
+
+                            return col
+            } 
+            const boardGenerator = (size) => {
+
+ for (let i = 0; i < size; i++) {
+
+                       let row = document.createElement('div')
+                        row.setAttribute('class','row')
+                        for (let j = 0; j < size; j++) {
+                            
+                         let col =   colCreate(i,j)
+                            
+                            row.appendChild(col)
+                            
+                            
+                        }
+                        board.appendChild(row)
+                    }
+            }
+         
+            btn.addEventListener('click', () => {
+                board.innerHTML = ''
+                  let size = sizeInput.value
+                  boardGenerator(size)
+            })
+
+
+
+    </script>
+</body>
+</html>
